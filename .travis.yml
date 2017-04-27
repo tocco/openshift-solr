@@ -11,7 +11,7 @@ before_install:
   - docker build -t solr .
   - docker run -d -u 1234:0 -p 8983:8983 solr
   - |
-    while ! [[ $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/nice2_index/update?commit=true&wt=json") = 200 ]]; do
+    while ! wget -O /dev/null "http://localhost:8983/solr/nice2_index/update?commit=true&wt=json"; do
         echo "waiting for Solr to become ready"
         sleep 1;
     done
