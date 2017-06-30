@@ -8,12 +8,6 @@ addons:
     - python3-pip
 before_install:
   - sudo pip3 install SolrClient
-  - docker build -t solr .
-  - docker run -d -u 1234:0 -p 8983:8983 solr
-  - |
-    while ! wget -O /dev/null "http://localhost:8983/solr/nice2_index/update?commit=true&wt=json"; do
-        echo "waiting for Solr to become ready"
-        sleep 1;
-    done
+  - docker build -t solr_image .
 script:
   - ./test.py
