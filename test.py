@@ -32,7 +32,7 @@ class Docker:
         while True:
             time.sleep(1)
             try:
-                resp = requests.get('http://localhost:8983/solr/nice2_index/update?commit=true&wt=json')
+                resp = requests.get('http://localhost:8983/solr/nice2_index/query?q=*:*&rows=0')
                 if resp.status_code != 200:
                     print('waiting for Solr … (status code: {})'.format(resp.status_code))
                     continue
