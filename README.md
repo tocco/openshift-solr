@@ -1,5 +1,5 @@
 # Solr on Openshift
-[![Build Status](https://travis-ci.org/pgerber/openshift-solr.svg?branch=master)](https://travis-ci.org/pgerber/openshift-solr)
+[![Build Status](https://travis-ci.org/tocco/openshift-solr.svg?branch=master)](https://travis-ci.org/tocco/openshift-solr)
 
 This image is set up to provide search functionality to the [Tocco Business Framework](https://www.tocco.ch). It has been optimized
 to run on the [OpenShift platform](https://www.openshift.com) provided by [VSHN](https://vshn.ch/en/).
