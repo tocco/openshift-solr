@@ -29,7 +29,7 @@ class Docker:
         print('Starting Solr')
         self.proc = subprocess.Popen(['docker', 'run', '-u', '{}:0'.format(os.getuid()), '-p', '8983:8983', '-v', self.volume.name + ':/persist', 'solr_image'])
 
-        while True:
+        for _ in range(60):
             time.sleep(1)
             try:
                 resp = requests.get('http://localhost:8983/solr/nice2_index/query?q=*:*&rows=0')
@@ -45,6 +45,8 @@ class Docker:
                 raise AssertionError('Solr container died')
             except subprocess.TimeoutExpired:
                 pass
+        else:
+            raise TimeoutError('Slor took to long to start')
 
 
 def find_some_sample_text(client):
