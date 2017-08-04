@@ -1,5 +1,7 @@
 FROM solr:latest
 
+LABEL io.openshift.non-scalable     true
+
 USER root
 
 ADD nice2_index /opt/solr/server/solr/nice2_index
