@@ -20,7 +20,7 @@ def rewrite_config(old, new, config):
         match = IS_ENTRY.search(line)
         if match:
             name = match.group('name')
-            value = config.pop(name)
+            value = config.pop(name, None)
             if name:
                 write_conf('{}={}\n'.format(name, value))
             else:
