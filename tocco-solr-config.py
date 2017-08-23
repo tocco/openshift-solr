@@ -20,9 +20,9 @@ def rewrite_config(old, new, config):
         match = IS_ENTRY.search(line)
         if match:
             name = match.group('name')
-            if name in config:
-                write_conf('{}={}\n'.format(name, config[name]))
-                del config[name]
+            value = config.pop(name)
+            if name:
+                write_conf('{}={}\n'.format(name, value))
             else:
                 write_conf(line)
         else:
