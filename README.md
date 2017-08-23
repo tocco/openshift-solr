@@ -4,6 +4,21 @@
 This image is set up to provide search functionality to the [Tocco Business Framework](https://www.tocco.ch). It has been optimized
 to run on the [OpenShift platform](https://www.openshift.com) provided by [VSHN](https://vshn.ch/en/).
 
+## Configuration
+
+All configuration parameters available in /opt/solr/bin/solr.in.sh within the image can be overridden using environment variables by
+prefixing `SOLR_`.
+
+### Example
+
+Change parameter `SOLR_HEAP=1024m`:
+
+```
+SOLR_SOLR_HEAP=1024m
+```
+
+Take a look at the [sample config](tests/sample_config.conf) used in the tests to see available properties.
+
 ## Caveats
 
 ### .trashcan
