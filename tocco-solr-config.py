@@ -4,11 +4,12 @@ import os
 import re
 import sys
 
+PREFIX = 'SOLR_'
 IS_ENTRY = re.compile('^\s*(?P<name>[^=]*)\s*=')
 
 
 def extract_config_from_env(env):
-    return {k[5:]: v for k, v in env.items() if k.startswith('SOLR_')}
+    return {k[len(PREFIX):]: v for k, v in env.items() if k.startswith(PREFIX)}
 
 
 def rewrite_config(old, new, config):
