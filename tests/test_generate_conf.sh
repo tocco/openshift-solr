@@ -2,9 +2,9 @@
 set -Eeu
 trap '[ -n "${temp-}" ] && rm -rf "$temp"' EXIT
 
-export SOLR_SOLR_PORT=1234
-export SOLR_SOLR_HEAP=1024m
-export SOLR_ZK_CLIENT_TIMEOUT=300
+export SOLR_PARAM_SOLR_PORT=1234
+export SOLR_PARAM_SOLR_HEAP=1024m
+export SOLR_PARAM_ZK_CLIENT_TIMEOUT=300
 
 temp=$(mktemp -d)
 cp tests/sample_config.conf "$temp/config"
