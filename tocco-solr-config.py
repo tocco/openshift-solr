@@ -4,7 +4,7 @@ import os
 import re
 import sys
 
-PREFIX = 'SOLR_'
+PREFIX = 'SOLR_PARAM_'
 IS_ENTRY = re.compile('^\s*(?P<name>[^=]*)\s*=')
 
 
@@ -22,7 +22,7 @@ def rewrite_config(old, new, config):
         if match:
             name = match.group('name')
             value = config.pop(name, None)
-            if name:
+            if value:
                 write_conf('{}={}\n'.format(name, value))
             else:
                 write_conf(line)

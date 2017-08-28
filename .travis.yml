@@ -10,4 +10,4 @@ before_install:
   - sudo pip3 install SolrClient
   - docker build -t solr_image .
 script:
-  - run-parts --report tests
+  - run-parts --report --regex 'test_.*' tests

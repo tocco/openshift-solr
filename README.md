@@ -7,14 +7,14 @@ to run on the [OpenShift platform](https://www.openshift.com) provided by [VSHN]
 ## Configuration
 
 All configuration parameters available in /opt/solr/bin/solr.in.sh within the image can be overridden using environment variables by
-prefixing `SOLR_`.
+prefixing `SOLR_PARAM_`.
 
 ### Example
 
 Change parameter `SOLR_HEAP=1024m`:
 
 ```
-SOLR_SOLR_HEAP=1024m
+SOLR_PARAM_SOLR_HEAP=1024m
 ```
 
 Take a look at the [sample config](tests/sample_config.conf) used in the tests to see available properties.
