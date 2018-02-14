@@ -60,8 +60,8 @@ def max_heap_from_limit(config):
 
 def main(path, env):
     config = extract_config_from_env(env)
-    if 'MEMORY_LIMIT' in env and 'SOLR_PARAM_SOLR_HEAP' not in config:
-        config['SOLR_PARAM_SOLR_HEAP'] = max_heap_from_limit(env)
+    if 'MEMORY_LIMIT' in env and 'SOLR_HEAP' not in config:
+        config['SOLR_HEAP'] = max_heap_from_limit(env)
     orig_path = path + '.orig'
     os.rename(path, orig_path)
     with open(path, "w") as new, open(orig_path) as old:
