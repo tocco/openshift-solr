@@ -1,4 +1,4 @@
-FROM solr:latest
+FROM solr:7.3
 
 LABEL io.openshift.non-scalable     true
 
