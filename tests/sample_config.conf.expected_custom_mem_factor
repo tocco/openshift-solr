@@ -139,3 +139,8 @@ SOLR_PORT=8983
 #  -DzkDigestUsername=admin-user -DzkDigestPassword=CHANGEME-ADMIN-PASSWORD \
 #  -DzkDigestReadonlyUsername=readonly-user -DzkDigestReadonlyPassword=CHANGEME-READONLY-PASSWORD"
 #SOLR_OPTS="$SOLR_OPTS $SOLR_ZK_CREDS_AND_ACLS"
+
+### GENERATED ###
+SOLR_HEAP=307m
+GC_TUNE="-XX:+ExitOnOutOfMemoryError${GC_TUNE+ $GC_TUNE}"
+GC_TUNE="-XX:+UseParallelGC -Xms64m -XX:MinHeapFreeRatio=15 -XX:MaxHeapFreeRatio=30${GC_TUNE+ $GC_TUNE}"

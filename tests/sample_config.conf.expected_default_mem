@@ -140,5 +140,8 @@ SOLR_PORT=1234
 #  -DzkDigestReadonlyUsername=readonly-user -DzkDigestReadonlyPassword=CHANGEME-READONLY-PASSWORD"
 #SOLR_OPTS="$SOLR_OPTS $SOLR_ZK_CREDS_AND_ACLS"
 
+### GENERATED ###
 SOLR_HEAP=1024m
 ZK_CLIENT_TIMEOUT=300
+GC_TUNE="-XX:+ExitOnOutOfMemoryError${GC_TUNE+ $GC_TUNE}"
+GC_TUNE="-XX:+UseParallelGC -Xms64m -XX:MinHeapFreeRatio=15 -XX:MaxHeapFreeRatio=30${GC_TUNE+ $GC_TUNE}"
